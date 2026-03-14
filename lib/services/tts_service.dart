@@ -1,8 +1,10 @@
 import 'package:flutter_tts/flutter_tts.dart';
+import '../models/app_settings.dart';
 
 class TtsService {
   final FlutterTts _tts = FlutterTts();
   VoidCallback? onComplete;
+  String apiKey = "";
 
   TtsService() {
     _tts.setLanguage('en-US');
@@ -11,6 +13,12 @@ class TtsService {
     _tts.setCompletionHandler(() {
       onComplete?.call();
     });
+  }
+
+  void applySettings(AppSettings settings) {
+    _tts.setLanguage(settings.language);
+    _tts.setPitch(settings.pitch);
+    _tts.setSpeechRate(settings.speechRate);
   }
 
   Future<void> speak(String text) async {

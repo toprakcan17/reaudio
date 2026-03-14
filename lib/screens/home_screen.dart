@@ -5,6 +5,10 @@ import '../services/book_cache_service.dart';
 import '../services/epub_service.dart';
 import '../services/pdf_service.dart';
 import 'player_screen.dart';
+import 'browse_books_screen.dart';
+import 'settings_screen.dart';
+import '../main.dart';
+import '../models/app_settings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -79,6 +83,37 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Audiobook TTS'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.explore),
+            tooltip: 'Get New Books',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const BrowseBooksScreen(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Settings',
+            onPressed: () async {
+              final appState = AudiobookApp.of(context);
+              final result = await Navigator.push<AppSettings>(
+                context,
+                MaterialPageRoute(
+                  builder: (_) =>
+                      SettingsScreen(settings: appState.settings),
+                ),
+              );
+              if (result != null) {
+                appState.updateSettings(result);
+              }
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [

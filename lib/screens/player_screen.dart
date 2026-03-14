@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/book.dart';
 import '../models/player_status.dart';
 import '../services/tts_service.dart';
+import '../main.dart';
 
 class PlayerScreen extends StatefulWidget {
   final Book book;
@@ -25,6 +26,12 @@ class _PlayerScreenState extends State<PlayerScreen> {
   void initState() {
     super.initState();
     _ttsService.onComplete = _onSentenceComplete;
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _ttsService.applySettings(AudiobookApp.of(context).settings);
   }
 
   @override
