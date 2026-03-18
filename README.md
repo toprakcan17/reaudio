@@ -1,17 +1,33 @@
-# audiobook_tts
+# Audiobook-tts (no other better name exists i guess)
 
-A new Flutter project.
+Audiobook-tts is a basic Flutter app for converting .epub and .pdf files to audiobooks via TTS (text to speech generation). 
+The app can be also used as an e-reader app, as it also has text support, without playing any audio. 
 
-## Getting Started
+## Features
+  - Supports .epub (.pdf support will be implemented later)
+  - Can pull up e-books from archive.org's massive 20+ Million public domain books archive
+  - Converts e-pub to audio with TTS (online TTS APIs (Elevenlabs, Gemini TTS, OpenAI TTS, etc...) support will be implemented later)
+## Dependencies
+  + epubx: 4.0.0
+  + file_picker: ^8.1.2
+  + path_provider: ^2.1.3
+  + flutter_tts: ^4.2.0
+  + just_audio: ^0.9.40
+  + permission_handler: ^11.3.2
+  + sqflite: ^2.4.2
+  + path: ^1.9.1
+  + shared_preferences: ^2.5.4
+  + http: ^1.6.0
+  + html: ^0.15.6
 
-This project is a starting point for a Flutter application.
+## Build from source
+### Requirements
++ Flutter SDK
+### Steps to build
+`git clone https://github.com/toprakcan17/audiobook-tts.git`
 
-A few resources to get you started if this is your first Flutter project:
+`cd audiobook-tts`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+`flutter pub get`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`flutter build`
