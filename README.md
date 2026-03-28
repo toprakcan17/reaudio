@@ -24,9 +24,9 @@ The app can be also used as an e-reader app, as it also has text support, withou
 ### Requirements
 + Flutter SDK
 ### Steps to build
-`git clone https://github.com/toprakcan17/audiobook-tts.git`
+`git clone https://github.com/toprakcan17/reaudio.git`
 
-`cd audiobook-tts`
+`cd reaudio`
 
 `flutter pub get`
 
