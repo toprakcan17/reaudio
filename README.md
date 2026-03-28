@@ -1,6 +1,6 @@
-# Audiobook-tts (no other better name exists i guess)
+# Reaudio
 
-Audiobook-tts is a basic Flutter app for converting .epub and .pdf files to audiobooks via TTS (text to speech generation). 
+Reaudio is a basic Flutter app for converting .epub and .pdf files to audiobooks via TTS (text to speech generation). 
 The app can be also used as an e-reader app, as it also has text support, without playing any audio. 
 
 ## Features
